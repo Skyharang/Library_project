@@ -12,7 +12,7 @@ import lombok.Data;
 public class UserLogin {
 
     @NotBlank(message="이메일을 입력해주세요")
-    private String userEmail;
+    private String userId;
 
     @NotBlank(message="비밀번호를 입력해주세요")
     private String userPw;
