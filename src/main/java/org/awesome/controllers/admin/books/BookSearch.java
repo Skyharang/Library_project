@@ -16,7 +16,7 @@ public class BookSearch {
     private String sopt; // 선택 옵션
     private String skey; // 키워드
 
-    private String status;
+    private String[] status;
 
-    private String rentalType;
+    private String[] rentalType;
 }
