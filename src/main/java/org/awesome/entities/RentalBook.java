@@ -1,10 +1,15 @@
 package org.awesome.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.awesome.constants.RentalStatus;
 import org.awesome.constants.RentalType;
 
-@Entity
+@Entity @Data @Builder
+@NoArgsConstructor @AllArgsConstructor
 public class RentalBook extends BaseEntity {
     @Id
     private String bookId;
