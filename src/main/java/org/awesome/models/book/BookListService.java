@@ -3,7 +3,6 @@ package org.awesome.models.book;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.awesome.controllers.admin.books.BookSearch;
-import org.awesome.entities.Rental;
 import org.awesome.entities.RentalBook;
 import org.awesome.repositories.RentalBookRepository;
 import org.springframework.data.domain.Page;

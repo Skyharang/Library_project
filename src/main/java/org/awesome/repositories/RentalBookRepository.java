@@ -53,13 +53,13 @@ public interface RentalBookRepository extends JpaRepository<RentalBook, String>,
             builder.and(orBuilder);
         }
 
-        if (status.length > 0) { // 대여 상태 조회
+        if (status != null && status.length > 0) { // 대여 상태 조회
             List<RentalStatus> statuses = Arrays.stream(status).map(RentalStatus::valueOf).toList();
             builder.and(rentalBook.status.in(statuses));
         }
 
-        if (rentalType.length > 0) { // 도서 종류
-            List<RentalType> rentalTypes = Arrays.stream(status).map(RentalType::valueOf).toList();
+        if (rentalType != null && rentalType.length > 0) { // 도서 종류
+            List<RentalType> rentalTypes = Arrays.stream(rentalType).map(RentalType::valueOf).toList();
             builder.and(rentalBook.rentalType.in(rentalTypes));
         }
         /** 검색 조건 처리 E */

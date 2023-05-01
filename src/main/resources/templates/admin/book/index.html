@@ -5,5 +5,36 @@
     <section layout:fragment="content">
         <nav th:replace="~{admin/book/_submenus::menus}"></nav>
 
+        <table class="table_rows">
+            <thead>
+                <tr>
+                    <th width="30">
+                        <input type="checkbox" class="select_all" data-target-name="bookId" id="select_all">
+                        <label for="select_all"></label>
+                    </th>
+                    <th width="150">도서ID</th>
+                    <th colspan="2">도서정보</th>
+                    <th width="150">도서종류</th>
+                    <th width="150">저자</th>
+                    <th width="150">출판사</th>
+                    <th width="250"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <th:block th:if="${#lists.isEmpty(books)}">
+                <tr>
+                    <td colspan="7">등록된 도서가 없습니다.</td>
+                </tr>
+            </th:block>
+            <th:block th:unless="${#lists.isEmpty(books)}">
+                <tr th:each="book : ">
+
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+
+        <th:block th:replace="~{commons/pagination::pagination}"></th:block>
     </section>
 </html>

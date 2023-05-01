@@ -1,9 +1,14 @@
 package org.awesome.controllers.admin.books;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.awesome.commons.Pagination;
+import org.awesome.entities.RentalBook;
 import org.awesome.models.book.BookInfoService;
+import org.awesome.models.book.BookListService;
 import org.awesome.models.book.BookSaveService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -11,6 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 
 @Controller("adminBookController")
@@ -20,10 +27,18 @@ public class BookController {
     private final BookSaveService saveService;
     private final BookInfoService infoService;
 
-    @GetMapping
-    public String index(BookSearch bookSearch) {
-        int page = bookSearch.getPage();
+    private final BookListService listService;
 
+    @GetMapping
+    public String index(BookSearch bookSearch, Model model, HttpServletRequest request) {
+
+        List<RentalBook> books = listService.gets(bookSearch).toList();
+        Page<RentalBook> page = listService.getPage();
+
+        String url = request.getContextPath() + "/admin/book";
+        Pagination<RentalBook> pagination = new Pagination<>(page, url);
+        model.addAttribute("pagination", pagination);
+        model.addAttribute("books", books);
         return "admin/book/index";
     }
 
