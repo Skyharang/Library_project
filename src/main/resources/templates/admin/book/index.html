@@ -28,8 +28,19 @@
                 </tr>
             </th:block>
             <th:block th:unless="${#lists.isEmpty(books)}">
-                <tr th:each="book : ">
-
+                <tr th:each="book, status : ${books}" th:object="${book}">
+                    <td>
+                        <input type="checkbox" name="bookId" th:value="*{bookId}" th:id="'bookId_' + ${status.index}">
+                    </td>
+                    <td th:text="*{bookId}"></td>
+                    <td>이미지</td>
+                    <td th:text="*{bookNm}"></td>
+                    <td></td>
+                    <td th:text="*{author}"></td>
+                    <td th:text="*{publisher}"></td>
+                    <td>
+                        <a th:href="@{/admin/book/update/{id}(id=*{bookId})}" class="btn1">수정하기</a>
+                    </td>
                 </tr>
             </th:block>
             </tbody>
