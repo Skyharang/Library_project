@@ -1,6 +1,7 @@
 package org.awesome.models.user;
 
 import lombok.RequiredArgsConstructor;
+import org.awesome.constants.UserType;
 import org.awesome.controllers.user.UserJoin;
 import org.awesome.entities.User;
 import org.awesome.repositories.UserRepository;
@@ -22,6 +23,7 @@ public class UserJoinService {
         User user = User.builder()
                 .userId(join.getUserId())
                 .userPw(hash)
+                .userType(UserType.USER)
                 .userNm(join.getUserNm())
                 .build();
 
