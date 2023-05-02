@@ -13,7 +13,7 @@ a {
 dl, dt, dd, ul, ol, li {
     margin: 0; padding: 0;
 }
-ol, li {
+ ol {
     list-style: none;
 }
 img {
@@ -136,6 +136,7 @@ main > aside{
     border-right: 2px solid #000;
 }
 main > aside a{
+    min-width: 120px;
     display: block;
     padding: 25px 20px;
     text-align: center;
@@ -169,11 +170,23 @@ main nav.sub_menus{
 }
 /** 관리자 메인 영역  > side 부분 E */
 
-/** 페이징 공통 S */
-.pagination { text-align: center; }
-.pagination .page { display: inline-block; }
-.pagination .page a { display: inline-block; padding: 5px 10px; line-height: 1;  border: 1px solid #000; border-radius: 3px; }
-.pagination .page.on a { background: #000; color: #fff; font-weight: bold; }
-/** 페이징 공통 E */
-
-
+/** 회원 검색 S */
+table {
+    width: 100%;
+    min-width: 500px;
+    text-align: center;
+    padding: 1rem;
+}
+table td, th {
+    padding: 0.5rem 0 0.5rem 0;
+    shrink: 0;
+    border-bottom: 1px solid #ddd;
+}
+table button {
+    border: 1px solid;
+    padding: 0.5rem;
+}
+table button:hover {
+    background-color: black;
+    color: white;
+}
