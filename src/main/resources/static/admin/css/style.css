@@ -177,14 +177,15 @@ table {
     text-align: center;
     padding: 1rem;
 }
-table td, th {
+table tr {
     padding: 0.5rem 0 0.5rem 0;
-    shrink: 0;
-    border-bottom: 1px solid #ddd;
 }
+
 table button {
+    border-radius: 5px;
     border: 1px solid;
     padding: 0.5rem;
+    background-color: white
 }
 table button:hover {
     background-color: black;

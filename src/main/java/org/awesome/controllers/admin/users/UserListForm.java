@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class UserListForm {
+
+    private String mode;
     @NotBlank
     private Long userNo;
     @NotBlank
