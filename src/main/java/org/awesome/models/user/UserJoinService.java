@@ -27,7 +27,7 @@ public class UserJoinService {
                 .userNm(join.getUserNm())
                 .build();
 
-        repository.save(user);
+        repository.saveAndFlush(user);
 
 
     }

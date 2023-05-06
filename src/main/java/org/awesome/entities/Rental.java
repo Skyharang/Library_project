@@ -2,13 +2,14 @@ package org.awesome.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 
 import static org.thymeleaf.util.DateUtils.day;
 
 @Entity
-public class Rental extends BaseEntity {
+public class Rental {
 
     @Id @GeneratedValue
     private Long rentalNo;

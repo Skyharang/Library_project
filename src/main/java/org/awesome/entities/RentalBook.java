@@ -11,7 +11,7 @@ import org.awesome.constants.RentalType;
 @Entity @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class RentalBook extends BaseEntity {
-    @Id
+    @Id @GeneratedValue
     private String bookId;
 
     @Column(length=45, nullable = false)
