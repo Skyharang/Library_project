@@ -31,6 +31,7 @@ public class SecurityConfig {
                 .requestMatchers("/mypage/**").authenticated()
                 .requestMatchers("/admin/**").hasAuthority("SUPER")
                 .requestMatchers("/admin/**").hasAuthority("MANAGER")
+
                 .anyRequest().permitAll();
         /**
          *  관리자 페이지에 권한없는 요청 URL 접속시 401 코드 및 오류 페이지 이동

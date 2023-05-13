@@ -12,7 +12,8 @@ public class Rental extends BaseEntity {
 
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="bookId")
-    private Book book;
+    private RentalBook book;
+
 
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="userNo")
